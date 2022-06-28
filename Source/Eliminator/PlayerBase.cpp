@@ -31,20 +31,20 @@ void APlayerBase::SetupPlayerInputComponent(UInputComponent* PlayerInputComponen
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
 
-	PlayerInputComponent->BindAxis(TEXT("Move Forward"), this, &APlayerBase::MoveForward);
-	PlayerInputComponent->BindAxis(TEXT("Move Forward"), this, &APlayerBase::MoveRight);
-
-
+	PlayerInputComponent->BindAxis(TEXT("LookRight"), this, &APawn::AddControllerYawInput);
+	PlayerInputComponent->BindAxis(TEXT("MoveForward"), this, &APlayerBase::MoveForward);
+	PlayerInputComponent->BindAxis(TEXT("MoveRight"), this, &APlayerBase::MoveRight);
+	PlayerInputComponent->BindAxis(TEXT("LookUp"), this, &APawn::AddControllerPitchInput);
 }
 
-void APlayerBase :: MoveForward(float axis)
+void APlayerBase :: MoveForward(float AxisValue)
 {
-	AddMovementInput(GetActorForwardVector() * axis);
+	AddMovementInput(GetActorForwardVector() * AxisValue);
 }
 
-void APlayerBase :: MoveRight(float axis)
+void APlayerBase :: MoveRight(float AxisValue)
 {
-	AddMovementInput(GetActorRightVector() * axis);
+	AddMovementInput(GetActorRightVector() * AxisValue);
 }
 
 
