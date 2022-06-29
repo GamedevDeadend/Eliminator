@@ -21,6 +21,7 @@ private:
 	class AGun* Gun;
 
 	void MoveForward(float axis);
+	void Fire();
 	void MoveRight(float axis);
 
 public:

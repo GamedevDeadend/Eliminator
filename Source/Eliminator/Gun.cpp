@@ -2,11 +2,12 @@
 
 #include "Gun.h"
 #include "Components/StaticMeshComponent.h"
+#include "Bullet.h"
 
 // Sets default values
 AGun::AGun()
 {
- 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
+	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 	WeaponRoot = CreateDefaultSubobject<USceneComponent>(TEXT("Root"));
 	SetRootComponent(WeaponRoot);
@@ -14,6 +15,8 @@ AGun::AGun()
 	Mesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Weapon Mesh"));
 	Mesh->SetupAttachment(WeaponRoot);
 
+	BulletSpawnPoint = CreateDefaultSubobject<USceneComponent>(TEXT("Bullet Spawn Point"));
+	BulletSpawnPoint->SetupAttachment(Mesh);
 }
 
 // Called when the game starts or when spawned
@@ -23,8 +26,14 @@ void AGun::BeginPlay()
 }
 
 // Called every frame
-void AGun::Tick(float DeltaTime)
+void AGun ::Tick(float DeltaTime)
 {
-	Super::Tick(DeltaTime);
+	Super ::Tick(DeltaTime);
 }
 
+void AGun :: Shoot()
+{
+		FVector Location = BulletSpawnPoint->GetComponentLocation();
+		FRotator Rotation = BulletSpawnPoint->GetComponentRotation();
+		GetWorld()->SpawnActor<ABullet>(FiredBulletClass, Location, Rotation);
+}

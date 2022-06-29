@@ -12,13 +12,19 @@ class ELIMINATOR_API AGun : public AActor
 	GENERATED_BODY()
 
 private:
+
 	
-	UPROPERTY(VisibleAnywhere)
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Weapon Defaults", meta = (AllowPrivateAccess = true));
 		USceneComponent* WeaponRoot;
 
-	UPROPERTY(VisibleAnywhere)
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Weapon Defaults" ,meta = (AllowPrivateAccess = true));
 		UStaticMeshComponent* Mesh;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Weapon Defaults" ,meta = (AllowPrivateAccess = true));
+		USceneComponent* BulletSpawnPoint;
 	
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Weapon Defaults", meta = (AllowPrivateAccess = true));
+	TSubclassOf<class ABullet> FiredBulletClass;
 public:	
 	// Sets default values for this actor's properties
 	AGun();
@@ -30,5 +36,6 @@ protected:
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
+	void Shoot();
 
 };
