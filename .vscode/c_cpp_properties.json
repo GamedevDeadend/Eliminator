@@ -1,0 +1,15 @@
+{
+    "configurations": [
+        {
+            "name": "EliminatorEditor Editor Win64 Development (Eliminator)",
+            "intelliSenseMode": "msvc-x64",
+            "compileCommands": "D:\\Games Repos\\Eliminator\\.vscode\\compileCommands_Eliminator.json"
+        },
+        {
+            "name": "Win32",
+            "intelliSenseMode": "msvc-x64",
+            "compileCommands": "D:\\Games Repos\\Eliminator\\.vscode\\compileCommands_Default.json"
+        }
+    ],
+    "version": 4
+}

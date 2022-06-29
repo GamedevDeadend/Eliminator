@@ -14,6 +14,12 @@ class ELIMINATOR_API APlayerBase : public ACharacter
 
 private:
 
+	UPROPERTY(EditDefaultsOnly)
+	TSubclassOf<class AGun> BlasterClass;
+
+	UPROPERTY()
+	class AGun* Gun;
+
 	void MoveForward(float axis);
 	void MoveRight(float axis);
 

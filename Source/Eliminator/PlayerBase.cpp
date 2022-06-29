@@ -2,6 +2,7 @@
 
 
 #include "PlayerBase.h"
+#include "Gun.h"
 
 // Sets default values
 APlayerBase::APlayerBase()
@@ -15,8 +16,9 @@ APlayerBase::APlayerBase()
 void APlayerBase::BeginPlay()
 {
 	Super::BeginPlay();
-
-	
+	Gun = GetWorld()->SpawnActor<AGun>(BlasterClass);
+	Gun->AttachToComponent(GetMesh(), FAttachmentTransformRules :: KeepRelativeTransform, TEXT("WepaonSocket"));
+	Gun->SetOwner(this);
 }
 
 // Called every frame
@@ -34,7 +36,8 @@ void APlayerBase::SetupPlayerInputComponent(UInputComponent* PlayerInputComponen
 	PlayerInputComponent->BindAxis(TEXT("LookRight"), this, &APawn::AddControllerYawInput);
 	PlayerInputComponent->BindAxis(TEXT("MoveForward"), this, &APlayerBase::MoveForward);
 	PlayerInputComponent->BindAxis(TEXT("MoveRight"), this, &APlayerBase::MoveRight);
-	PlayerInputComponent->BindAxis(TEXT("LookUp"), this, &APawn::AddControllerPitchInput);
+	PlayerInputComponent->BindAction("Jump", EInputEvent::IE_Pressed, this, &ACharacter :: Jump);
+	//PlayerInputComponent->BindAxis(TEXT("LookUp"), this, &APawn::AddControllerPitchInput);
 }
 
 void APlayerBase :: MoveForward(float AxisValue)

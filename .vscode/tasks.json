@@ -1,0 +1,1447 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Eliminator Win32 Debug Build",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"Eliminator",
+				"Win32",
+				"Debug",
+				"D:\\Games Repos\\Eliminator\\Eliminator.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "D:\\UE_4.27"
+			}
+		},
+		{
+			"label": "Eliminator Win32 Debug Rebuild",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"Eliminator",
+				"Win32",
+				"Debug",
+				"D:\\Games Repos\\Eliminator\\Eliminator.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"Eliminator Win32 Debug Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "D:\\UE_4.27"
+			}
+		},
+		{
+			"label": "Eliminator Win32 Debug Clean",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+			"args": [
+				"Eliminator",
+				"Win32",
+				"Debug",
+				"D:\\Games Repos\\Eliminator\\Eliminator.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "D:\\UE_4.27"
+			}
+		},
+		{
+			"label": "Eliminator Win32 DebugGame Build",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"Eliminator",
+				"Win32",
+				"DebugGame",
+				"D:\\Games Repos\\Eliminator\\Eliminator.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "D:\\UE_4.27"
+			}
+		},
+		{
+			"label": "Eliminator Win32 DebugGame Rebuild",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"Eliminator",
+				"Win32",
+				"DebugGame",
+				"D:\\Games Repos\\Eliminator\\Eliminator.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"Eliminator Win32 DebugGame Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "D:\\UE_4.27"
+			}
+		},
+		{
+			"label": "Eliminator Win32 DebugGame Clean",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+			"args": [
+				"Eliminator",
+				"Win32",
+				"DebugGame",
+				"D:\\Games Repos\\Eliminator\\Eliminator.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "D:\\UE_4.27"
+			}
+		},
+		{
+			"label": "Eliminator Win32 Development Build",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"Eliminator",
+				"Win32",
+				"Development",
+				"D:\\Games Repos\\Eliminator\\Eliminator.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "D:\\UE_4.27"
+			}
+		},
+		{
+			"label": "Eliminator Win32 Development Rebuild",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"Eliminator",
+				"Win32",
+				"Development",
+				"D:\\Games Repos\\Eliminator\\Eliminator.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"Eliminator Win32 Development Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "D:\\UE_4.27"
+			}
+		},
+		{
+			"label": "Eliminator Win32 Development Clean",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+			"args": [
+				"Eliminator",
+				"Win32",
+				"Development",
+				"D:\\Games Repos\\Eliminator\\Eliminator.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "D:\\UE_4.27"
+			}
+		},
+		{
+			"label": "Eliminator Win32 Shipping Build",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"Eliminator",
+				"Win32",
+				"Shipping",
+				"D:\\Games Repos\\Eliminator\\Eliminator.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "D:\\UE_4.27"
+			}
+		},
+		{
+			"label": "Eliminator Win32 Shipping Rebuild",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"Eliminator",
+				"Win32",
+				"Shipping",
+				"D:\\Games Repos\\Eliminator\\Eliminator.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"Eliminator Win32 Shipping Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "D:\\UE_4.27"
+			}
+		},
+		{
+			"label": "Eliminator Win32 Shipping Clean",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+			"args": [
+				"Eliminator",
+				"Win32",
+				"Shipping",
+				"D:\\Games Repos\\Eliminator\\Eliminator.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "D:\\UE_4.27"
+			}
+		},
+		{
+			"label": "Eliminator Win32 Test Build",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"Eliminator",
+				"Win32",
+				"Test",
+				"D:\\Games Repos\\Eliminator\\Eliminator.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "D:\\UE_4.27"
+			}
+		},
+		{
+			"label": "Eliminator Win32 Test Rebuild",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"Eliminator",
+				"Win32",
+				"Test",
+				"D:\\Games Repos\\Eliminator\\Eliminator.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"Eliminator Win32 Test Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "D:\\UE_4.27"
+			}
+		},
+		{
+			"label": "Eliminator Win32 Test Clean",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+			"args": [
+				"Eliminator",
+				"Win32",
+				"Test",
+				"D:\\Games Repos\\Eliminator\\Eliminator.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "D:\\UE_4.27"
+			}
+		},
+		{
+			"label": "Eliminator Win64 Debug Build",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"Eliminator",
+				"Win64",
+				"Debug",
+				"D:\\Games Repos\\Eliminator\\Eliminator.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "D:\\UE_4.27"
+			}
+		},
+		{
+			"label": "Eliminator Win64 Debug Rebuild",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"Eliminator",
+				"Win64",
+				"Debug",
+				"D:\\Games Repos\\Eliminator\\Eliminator.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"Eliminator Win64 Debug Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "D:\\UE_4.27"
+			}
+		},
+		{
+			"label": "Eliminator Win64 Debug Clean",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+			"args": [
+				"Eliminator",
+				"Win64",
+				"Debug",
+				"D:\\Games Repos\\Eliminator\\Eliminator.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "D:\\UE_4.27"
+			}
+		},
+		{
+			"label": "Eliminator Win64 DebugGame Build",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"Eliminator",
+				"Win64",
+				"DebugGame",
+				"D:\\Games Repos\\Eliminator\\Eliminator.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "D:\\UE_4.27"
+			}
+		},
+		{
+			"label": "Eliminator Win64 DebugGame Rebuild",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"Eliminator",
+				"Win64",
+				"DebugGame",
+				"D:\\Games Repos\\Eliminator\\Eliminator.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"Eliminator Win64 DebugGame Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "D:\\UE_4.27"
+			}
+		},
+		{
+			"label": "Eliminator Win64 DebugGame Clean",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+			"args": [
+				"Eliminator",
+				"Win64",
+				"DebugGame",
+				"D:\\Games Repos\\Eliminator\\Eliminator.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "D:\\UE_4.27"
+			}
+		},
+		{
+			"label": "Eliminator Win64 Development Build",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"Eliminator",
+				"Win64",
+				"Development",
+				"D:\\Games Repos\\Eliminator\\Eliminator.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "D:\\UE_4.27"
+			}
+		},
+		{
+			"label": "Eliminator Win64 Development Rebuild",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"Eliminator",
+				"Win64",
+				"Development",
+				"D:\\Games Repos\\Eliminator\\Eliminator.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"Eliminator Win64 Development Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "D:\\UE_4.27"
+			}
+		},
+		{
+			"label": "Eliminator Win64 Development Clean",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+			"args": [
+				"Eliminator",
+				"Win64",
+				"Development",
+				"D:\\Games Repos\\Eliminator\\Eliminator.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "D:\\UE_4.27"
+			}
+		},
+		{
+			"label": "Eliminator Win64 Shipping Build",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"Eliminator",
+				"Win64",
+				"Shipping",
+				"D:\\Games Repos\\Eliminator\\Eliminator.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "D:\\UE_4.27"
+			}
+		},
+		{
+			"label": "Eliminator Win64 Shipping Rebuild",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"Eliminator",
+				"Win64",
+				"Shipping",
+				"D:\\Games Repos\\Eliminator\\Eliminator.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"Eliminator Win64 Shipping Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "D:\\UE_4.27"
+			}
+		},
+		{
+			"label": "Eliminator Win64 Shipping Clean",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+			"args": [
+				"Eliminator",
+				"Win64",
+				"Shipping",
+				"D:\\Games Repos\\Eliminator\\Eliminator.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "D:\\UE_4.27"
+			}
+		},
+		{
+			"label": "Eliminator Win64 Test Build",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"Eliminator",
+				"Win64",
+				"Test",
+				"D:\\Games Repos\\Eliminator\\Eliminator.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "D:\\UE_4.27"
+			}
+		},
+		{
+			"label": "Eliminator Win64 Test Rebuild",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"Eliminator",
+				"Win64",
+				"Test",
+				"D:\\Games Repos\\Eliminator\\Eliminator.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"Eliminator Win64 Test Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "D:\\UE_4.27"
+			}
+		},
+		{
+			"label": "Eliminator Win64 Test Clean",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+			"args": [
+				"Eliminator",
+				"Win64",
+				"Test",
+				"D:\\Games Repos\\Eliminator\\Eliminator.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "D:\\UE_4.27"
+			}
+		},
+		{
+			"label": "Eliminator Android Debug Build",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"Eliminator",
+				"Android",
+				"Debug",
+				"D:\\Games Repos\\Eliminator\\Eliminator.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "D:\\UE_4.27"
+			}
+		},
+		{
+			"label": "Eliminator Android Debug Cook+Deploy",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\RunUAT.bat",
+			"args": [
+				"BuildCookRun",
+				"-ScriptsForProject=D:/Games Repos/Eliminator/Eliminator.uproject",
+				"-Project=D:/Games Repos/Eliminator/Eliminator.uproject",
+				"-noP4",
+				"-ClientConfig=Debug",
+				"-ServerConfig=Debug",
+				"-NoCompileEditor",
+				"-utf8output",
+				"-Platform=Android",
+				"-TargetPlatform=Android",
+				"-ini:Game:[/Script/UnrealEd.ProjectPackagingSettings]:BlueprintNativizationMethod=Disabled",
+				"-Compressed",
+				"-IterativeCooking",
+				"-IterativeDeploy",
+				"-Cook",
+				"-Stage",
+				"-Deploy"
+			],
+			"dependsOn": [
+				"EliminatorEditor Win64 Development Build",
+				"Eliminator Android Debug Build"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "D:\\UE_4.27"
+			}
+		},
+		{
+			"label": "Eliminator Android Debug Cook",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\RunUAT.bat",
+			"args": [
+				"BuildCookRun",
+				"-ScriptsForProject=D:/Games Repos/Eliminator/Eliminator.uproject",
+				"-Project=D:/Games Repos/Eliminator/Eliminator.uproject",
+				"-noP4",
+				"-ClientConfig=Debug",
+				"-ServerConfig=Debug",
+				"-NoCompileEditor",
+				"-utf8output",
+				"-Platform=Android",
+				"-TargetPlatform=Android",
+				"-ini:Game:[/Script/UnrealEd.ProjectPackagingSettings]:BlueprintNativizationMethod=Disabled",
+				"-Compressed",
+				"-IterativeCooking",
+				"-IterativeDeploy",
+				"-Cook"
+			],
+			"dependsOn": [
+				"EliminatorEditor Win64 Development Build",
+				"Eliminator Android Debug Build"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "D:\\UE_4.27"
+			}
+		},
+		{
+			"label": "Eliminator Android Debug Deploy",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\RunUAT.bat",
+			"args": [
+				"BuildCookRun",
+				"-ScriptsForProject=D:/Games Repos/Eliminator/Eliminator.uproject",
+				"-Project=D:/Games Repos/Eliminator/Eliminator.uproject",
+				"-noP4",
+				"-ClientConfig=Debug",
+				"-ServerConfig=Debug",
+				"-NoCompileEditor",
+				"-utf8output",
+				"-Platform=Android",
+				"-TargetPlatform=Android",
+				"-ini:Game:[/Script/UnrealEd.ProjectPackagingSettings]:BlueprintNativizationMethod=Disabled",
+				"-Compressed",
+				"-IterativeCooking",
+				"-IterativeDeploy",
+				"-DeploySoToDevice",
+				"-SkipCook",
+				"-Stage",
+				"-Deploy"
+			],
+			"dependsOn": [
+				"Eliminator Android Debug Build"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "D:\\UE_4.27"
+			}
+		},
+		{
+			"label": "Eliminator Android Debug Rebuild",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"Eliminator",
+				"Android",
+				"Debug",
+				"D:\\Games Repos\\Eliminator\\Eliminator.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"Eliminator Android Debug Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "D:\\UE_4.27"
+			}
+		},
+		{
+			"label": "Eliminator Android Debug Clean",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+			"args": [
+				"Eliminator",
+				"Android",
+				"Debug",
+				"D:\\Games Repos\\Eliminator\\Eliminator.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "D:\\UE_4.27"
+			}
+		},
+		{
+			"label": "Eliminator Android DebugGame Build",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"Eliminator",
+				"Android",
+				"DebugGame",
+				"D:\\Games Repos\\Eliminator\\Eliminator.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "D:\\UE_4.27"
+			}
+		},
+		{
+			"label": "Eliminator Android DebugGame Cook+Deploy",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\RunUAT.bat",
+			"args": [
+				"BuildCookRun",
+				"-ScriptsForProject=D:/Games Repos/Eliminator/Eliminator.uproject",
+				"-Project=D:/Games Repos/Eliminator/Eliminator.uproject",
+				"-noP4",
+				"-ClientConfig=DebugGame",
+				"-ServerConfig=DebugGame",
+				"-NoCompileEditor",
+				"-utf8output",
+				"-Platform=Android",
+				"-TargetPlatform=Android",
+				"-ini:Game:[/Script/UnrealEd.ProjectPackagingSettings]:BlueprintNativizationMethod=Disabled",
+				"-Compressed",
+				"-IterativeCooking",
+				"-IterativeDeploy",
+				"-Cook",
+				"-Stage",
+				"-Deploy"
+			],
+			"dependsOn": [
+				"EliminatorEditor Win64 Development Build",
+				"Eliminator Android DebugGame Build"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "D:\\UE_4.27"
+			}
+		},
+		{
+			"label": "Eliminator Android DebugGame Cook",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\RunUAT.bat",
+			"args": [
+				"BuildCookRun",
+				"-ScriptsForProject=D:/Games Repos/Eliminator/Eliminator.uproject",
+				"-Project=D:/Games Repos/Eliminator/Eliminator.uproject",
+				"-noP4",
+				"-ClientConfig=DebugGame",
+				"-ServerConfig=DebugGame",
+				"-NoCompileEditor",
+				"-utf8output",
+				"-Platform=Android",
+				"-TargetPlatform=Android",
+				"-ini:Game:[/Script/UnrealEd.ProjectPackagingSettings]:BlueprintNativizationMethod=Disabled",
+				"-Compressed",
+				"-IterativeCooking",
+				"-IterativeDeploy",
+				"-Cook"
+			],
+			"dependsOn": [
+				"EliminatorEditor Win64 Development Build",
+				"Eliminator Android DebugGame Build"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "D:\\UE_4.27"
+			}
+		},
+		{
+			"label": "Eliminator Android DebugGame Deploy",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\RunUAT.bat",
+			"args": [
+				"BuildCookRun",
+				"-ScriptsForProject=D:/Games Repos/Eliminator/Eliminator.uproject",
+				"-Project=D:/Games Repos/Eliminator/Eliminator.uproject",
+				"-noP4",
+				"-ClientConfig=DebugGame",
+				"-ServerConfig=DebugGame",
+				"-NoCompileEditor",
+				"-utf8output",
+				"-Platform=Android",
+				"-TargetPlatform=Android",
+				"-ini:Game:[/Script/UnrealEd.ProjectPackagingSettings]:BlueprintNativizationMethod=Disabled",
+				"-Compressed",
+				"-IterativeCooking",
+				"-IterativeDeploy",
+				"-DeploySoToDevice",
+				"-SkipCook",
+				"-Stage",
+				"-Deploy"
+			],
+			"dependsOn": [
+				"Eliminator Android DebugGame Build"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "D:\\UE_4.27"
+			}
+		},
+		{
+			"label": "Eliminator Android DebugGame Rebuild",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"Eliminator",
+				"Android",
+				"DebugGame",
+				"D:\\Games Repos\\Eliminator\\Eliminator.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"Eliminator Android DebugGame Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "D:\\UE_4.27"
+			}
+		},
+		{
+			"label": "Eliminator Android DebugGame Clean",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+			"args": [
+				"Eliminator",
+				"Android",
+				"DebugGame",
+				"D:\\Games Repos\\Eliminator\\Eliminator.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "D:\\UE_4.27"
+			}
+		},
+		{
+			"label": "Eliminator Android Development Build",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"Eliminator",
+				"Android",
+				"Development",
+				"D:\\Games Repos\\Eliminator\\Eliminator.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "D:\\UE_4.27"
+			}
+		},
+		{
+			"label": "Eliminator Android Development Cook+Deploy",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\RunUAT.bat",
+			"args": [
+				"BuildCookRun",
+				"-ScriptsForProject=D:/Games Repos/Eliminator/Eliminator.uproject",
+				"-Project=D:/Games Repos/Eliminator/Eliminator.uproject",
+				"-noP4",
+				"-ClientConfig=Development",
+				"-ServerConfig=Development",
+				"-NoCompileEditor",
+				"-utf8output",
+				"-Platform=Android",
+				"-TargetPlatform=Android",
+				"-ini:Game:[/Script/UnrealEd.ProjectPackagingSettings]:BlueprintNativizationMethod=Disabled",
+				"-Compressed",
+				"-IterativeCooking",
+				"-IterativeDeploy",
+				"-Cook",
+				"-Stage",
+				"-Deploy"
+			],
+			"dependsOn": [
+				"EliminatorEditor Win64 Development Build",
+				"Eliminator Android Development Build"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "D:\\UE_4.27"
+			}
+		},
+		{
+			"label": "Eliminator Android Development Cook",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\RunUAT.bat",
+			"args": [
+				"BuildCookRun",
+				"-ScriptsForProject=D:/Games Repos/Eliminator/Eliminator.uproject",
+				"-Project=D:/Games Repos/Eliminator/Eliminator.uproject",
+				"-noP4",
+				"-ClientConfig=Development",
+				"-ServerConfig=Development",
+				"-NoCompileEditor",
+				"-utf8output",
+				"-Platform=Android",
+				"-TargetPlatform=Android",
+				"-ini:Game:[/Script/UnrealEd.ProjectPackagingSettings]:BlueprintNativizationMethod=Disabled",
+				"-Compressed",
+				"-IterativeCooking",
+				"-IterativeDeploy",
+				"-Cook"
+			],
+			"dependsOn": [
+				"EliminatorEditor Win64 Development Build",
+				"Eliminator Android Development Build"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "D:\\UE_4.27"
+			}
+		},
+		{
+			"label": "Eliminator Android Development Deploy",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\RunUAT.bat",
+			"args": [
+				"BuildCookRun",
+				"-ScriptsForProject=D:/Games Repos/Eliminator/Eliminator.uproject",
+				"-Project=D:/Games Repos/Eliminator/Eliminator.uproject",
+				"-noP4",
+				"-ClientConfig=Development",
+				"-ServerConfig=Development",
+				"-NoCompileEditor",
+				"-utf8output",
+				"-Platform=Android",
+				"-TargetPlatform=Android",
+				"-ini:Game:[/Script/UnrealEd.ProjectPackagingSettings]:BlueprintNativizationMethod=Disabled",
+				"-Compressed",
+				"-IterativeCooking",
+				"-IterativeDeploy",
+				"-DeploySoToDevice",
+				"-SkipCook",
+				"-Stage",
+				"-Deploy"
+			],
+			"dependsOn": [
+				"Eliminator Android Development Build"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "D:\\UE_4.27"
+			}
+		},
+		{
+			"label": "Eliminator Android Development Rebuild",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"Eliminator",
+				"Android",
+				"Development",
+				"D:\\Games Repos\\Eliminator\\Eliminator.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"Eliminator Android Development Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "D:\\UE_4.27"
+			}
+		},
+		{
+			"label": "Eliminator Android Development Clean",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+			"args": [
+				"Eliminator",
+				"Android",
+				"Development",
+				"D:\\Games Repos\\Eliminator\\Eliminator.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "D:\\UE_4.27"
+			}
+		},
+		{
+			"label": "Eliminator Android Shipping Build",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"Eliminator",
+				"Android",
+				"Shipping",
+				"D:\\Games Repos\\Eliminator\\Eliminator.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "D:\\UE_4.27"
+			}
+		},
+		{
+			"label": "Eliminator Android Shipping Cook+Deploy",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\RunUAT.bat",
+			"args": [
+				"BuildCookRun",
+				"-ScriptsForProject=D:/Games Repos/Eliminator/Eliminator.uproject",
+				"-Project=D:/Games Repos/Eliminator/Eliminator.uproject",
+				"-noP4",
+				"-ClientConfig=Shipping",
+				"-ServerConfig=Shipping",
+				"-NoCompileEditor",
+				"-utf8output",
+				"-Platform=Android",
+				"-TargetPlatform=Android",
+				"-ini:Game:[/Script/UnrealEd.ProjectPackagingSettings]:BlueprintNativizationMethod=Disabled",
+				"-Compressed",
+				"-IterativeCooking",
+				"-IterativeDeploy",
+				"-Cook",
+				"-Stage",
+				"-Deploy"
+			],
+			"dependsOn": [
+				"EliminatorEditor Win64 Development Build",
+				"Eliminator Android Shipping Build"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "D:\\UE_4.27"
+			}
+		},
+		{
+			"label": "Eliminator Android Shipping Cook",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\RunUAT.bat",
+			"args": [
+				"BuildCookRun",
+				"-ScriptsForProject=D:/Games Repos/Eliminator/Eliminator.uproject",
+				"-Project=D:/Games Repos/Eliminator/Eliminator.uproject",
+				"-noP4",
+				"-ClientConfig=Shipping",
+				"-ServerConfig=Shipping",
+				"-NoCompileEditor",
+				"-utf8output",
+				"-Platform=Android",
+				"-TargetPlatform=Android",
+				"-ini:Game:[/Script/UnrealEd.ProjectPackagingSettings]:BlueprintNativizationMethod=Disabled",
+				"-Compressed",
+				"-IterativeCooking",
+				"-IterativeDeploy",
+				"-Cook"
+			],
+			"dependsOn": [
+				"EliminatorEditor Win64 Development Build",
+				"Eliminator Android Shipping Build"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "D:\\UE_4.27"
+			}
+		},
+		{
+			"label": "Eliminator Android Shipping Deploy",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\RunUAT.bat",
+			"args": [
+				"BuildCookRun",
+				"-ScriptsForProject=D:/Games Repos/Eliminator/Eliminator.uproject",
+				"-Project=D:/Games Repos/Eliminator/Eliminator.uproject",
+				"-noP4",
+				"-ClientConfig=Shipping",
+				"-ServerConfig=Shipping",
+				"-NoCompileEditor",
+				"-utf8output",
+				"-Platform=Android",
+				"-TargetPlatform=Android",
+				"-ini:Game:[/Script/UnrealEd.ProjectPackagingSettings]:BlueprintNativizationMethod=Disabled",
+				"-Compressed",
+				"-IterativeCooking",
+				"-IterativeDeploy",
+				"-DeploySoToDevice",
+				"-SkipCook",
+				"-Stage",
+				"-Deploy"
+			],
+			"dependsOn": [
+				"Eliminator Android Shipping Build"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "D:\\UE_4.27"
+			}
+		},
+		{
+			"label": "Eliminator Android Shipping Rebuild",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"Eliminator",
+				"Android",
+				"Shipping",
+				"D:\\Games Repos\\Eliminator\\Eliminator.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"Eliminator Android Shipping Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "D:\\UE_4.27"
+			}
+		},
+		{
+			"label": "Eliminator Android Shipping Clean",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+			"args": [
+				"Eliminator",
+				"Android",
+				"Shipping",
+				"D:\\Games Repos\\Eliminator\\Eliminator.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "D:\\UE_4.27"
+			}
+		},
+		{
+			"label": "Eliminator Android Test Build",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"Eliminator",
+				"Android",
+				"Test",
+				"D:\\Games Repos\\Eliminator\\Eliminator.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "D:\\UE_4.27"
+			}
+		},
+		{
+			"label": "Eliminator Android Test Cook+Deploy",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\RunUAT.bat",
+			"args": [
+				"BuildCookRun",
+				"-ScriptsForProject=D:/Games Repos/Eliminator/Eliminator.uproject",
+				"-Project=D:/Games Repos/Eliminator/Eliminator.uproject",
+				"-noP4",
+				"-ClientConfig=Test",
+				"-ServerConfig=Test",
+				"-NoCompileEditor",
+				"-utf8output",
+				"-Platform=Android",
+				"-TargetPlatform=Android",
+				"-ini:Game:[/Script/UnrealEd.ProjectPackagingSettings]:BlueprintNativizationMethod=Disabled",
+				"-Compressed",
+				"-IterativeCooking",
+				"-IterativeDeploy",
+				"-Cook",
+				"-Stage",
+				"-Deploy"
+			],
+			"dependsOn": [
+				"EliminatorEditor Win64 Development Build",
+				"Eliminator Android Test Build"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "D:\\UE_4.27"
+			}
+		},
+		{
+			"label": "Eliminator Android Test Cook",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\RunUAT.bat",
+			"args": [
+				"BuildCookRun",
+				"-ScriptsForProject=D:/Games Repos/Eliminator/Eliminator.uproject",
+				"-Project=D:/Games Repos/Eliminator/Eliminator.uproject",
+				"-noP4",
+				"-ClientConfig=Test",
+				"-ServerConfig=Test",
+				"-NoCompileEditor",
+				"-utf8output",
+				"-Platform=Android",
+				"-TargetPlatform=Android",
+				"-ini:Game:[/Script/UnrealEd.ProjectPackagingSettings]:BlueprintNativizationMethod=Disabled",
+				"-Compressed",
+				"-IterativeCooking",
+				"-IterativeDeploy",
+				"-Cook"
+			],
+			"dependsOn": [
+				"EliminatorEditor Win64 Development Build",
+				"Eliminator Android Test Build"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "D:\\UE_4.27"
+			}
+		},
+		{
+			"label": "Eliminator Android Test Deploy",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\RunUAT.bat",
+			"args": [
+				"BuildCookRun",
+				"-ScriptsForProject=D:/Games Repos/Eliminator/Eliminator.uproject",
+				"-Project=D:/Games Repos/Eliminator/Eliminator.uproject",
+				"-noP4",
+				"-ClientConfig=Test",
+				"-ServerConfig=Test",
+				"-NoCompileEditor",
+				"-utf8output",
+				"-Platform=Android",
+				"-TargetPlatform=Android",
+				"-ini:Game:[/Script/UnrealEd.ProjectPackagingSettings]:BlueprintNativizationMethod=Disabled",
+				"-Compressed",
+				"-IterativeCooking",
+				"-IterativeDeploy",
+				"-DeploySoToDevice",
+				"-SkipCook",
+				"-Stage",
+				"-Deploy"
+			],
+			"dependsOn": [
+				"Eliminator Android Test Build"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "D:\\UE_4.27"
+			}
+		},
+		{
+			"label": "Eliminator Android Test Rebuild",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"Eliminator",
+				"Android",
+				"Test",
+				"D:\\Games Repos\\Eliminator\\Eliminator.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"Eliminator Android Test Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "D:\\UE_4.27"
+			}
+		},
+		{
+			"label": "Eliminator Android Test Clean",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+			"args": [
+				"Eliminator",
+				"Android",
+				"Test",
+				"D:\\Games Repos\\Eliminator\\Eliminator.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "D:\\UE_4.27"
+			}
+		},
+		{
+			"label": "EliminatorEditor Win64 Debug Build",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"EliminatorEditor",
+				"Win64",
+				"Debug",
+				"D:\\Games Repos\\Eliminator\\Eliminator.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "D:\\UE_4.27"
+			}
+		},
+		{
+			"label": "EliminatorEditor Win64 Debug Rebuild",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"EliminatorEditor",
+				"Win64",
+				"Debug",
+				"D:\\Games Repos\\Eliminator\\Eliminator.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"EliminatorEditor Win64 Debug Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "D:\\UE_4.27"
+			}
+		},
+		{
+			"label": "EliminatorEditor Win64 Debug Clean",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+			"args": [
+				"EliminatorEditor",
+				"Win64",
+				"Debug",
+				"D:\\Games Repos\\Eliminator\\Eliminator.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "D:\\UE_4.27"
+			}
+		},
+		{
+			"label": "EliminatorEditor Win64 DebugGame Build",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"EliminatorEditor",
+				"Win64",
+				"DebugGame",
+				"D:\\Games Repos\\Eliminator\\Eliminator.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "D:\\UE_4.27"
+			}
+		},
+		{
+			"label": "EliminatorEditor Win64 DebugGame Rebuild",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"EliminatorEditor",
+				"Win64",
+				"DebugGame",
+				"D:\\Games Repos\\Eliminator\\Eliminator.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"EliminatorEditor Win64 DebugGame Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "D:\\UE_4.27"
+			}
+		},
+		{
+			"label": "EliminatorEditor Win64 DebugGame Clean",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+			"args": [
+				"EliminatorEditor",
+				"Win64",
+				"DebugGame",
+				"D:\\Games Repos\\Eliminator\\Eliminator.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "D:\\UE_4.27"
+			}
+		},
+		{
+			"label": "EliminatorEditor Win64 Development Build",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"EliminatorEditor",
+				"Win64",
+				"Development",
+				"D:\\Games Repos\\Eliminator\\Eliminator.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "D:\\UE_4.27"
+			}
+		},
+		{
+			"label": "EliminatorEditor Win64 Development Rebuild",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Build.bat",
+			"args": [
+				"EliminatorEditor",
+				"Win64",
+				"Development",
+				"D:\\Games Repos\\Eliminator\\Eliminator.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"EliminatorEditor Win64 Development Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "D:\\UE_4.27"
+			}
+		},
+		{
+			"label": "EliminatorEditor Win64 Development Clean",
+			"group": "build",
+			"command": "Engine\\Build\\BatchFiles\\Clean.bat",
+			"args": [
+				"EliminatorEditor",
+				"Win64",
+				"Development",
+				"D:\\Games Repos\\Eliminator\\Eliminator.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "D:\\UE_4.27"
+			}
+		}
+	]
+}

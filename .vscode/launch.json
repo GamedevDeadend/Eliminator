@@ -1,0 +1,123 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Eliminator (Debug)",
+            "request": "launch",
+            "preLaunchTask": "Eliminator Win64 Debug Build",
+            "program": "D:\\Games Repos\\Eliminator\\Binaries\\Win64\\UE4-Win64-Debug.exe",
+            "args": [],
+            "cwd": "D:\\UE_4.27",
+            "stopAtEntry": false,
+            "type": "cppvsdbg",
+            "visualizerFile": "D:\\UE_4.27\\Engine\\Extras\\VisualStudioDebugging\\UE4.natvis",
+            "console": "externalTerminal"
+        },
+        {
+            "name": "Eliminator (DebugGame)",
+            "request": "launch",
+            "preLaunchTask": "Eliminator Win64 DebugGame Build",
+            "program": "D:\\Games Repos\\Eliminator\\Binaries\\Win64\\UE4-Win64-DebugGame.exe",
+            "args": [],
+            "cwd": "D:\\UE_4.27",
+            "stopAtEntry": false,
+            "type": "cppvsdbg",
+            "visualizerFile": "D:\\UE_4.27\\Engine\\Extras\\VisualStudioDebugging\\UE4.natvis",
+            "console": "externalTerminal"
+        },
+        {
+            "name": "Eliminator (Development)",
+            "request": "launch",
+            "preLaunchTask": "Eliminator Win64 Development Build",
+            "program": "D:\\Games Repos\\Eliminator\\Binaries\\Win64\\UE4.exe",
+            "args": [],
+            "cwd": "D:\\UE_4.27",
+            "stopAtEntry": false,
+            "type": "cppvsdbg",
+            "visualizerFile": "D:\\UE_4.27\\Engine\\Extras\\VisualStudioDebugging\\UE4.natvis",
+            "console": "externalTerminal"
+        },
+        {
+            "name": "Eliminator (Shipping)",
+            "request": "launch",
+            "preLaunchTask": "Eliminator Win64 Shipping Build",
+            "program": "D:\\Games Repos\\Eliminator\\Binaries\\Win64\\UE4-Win64-Shipping.exe",
+            "args": [],
+            "cwd": "D:\\UE_4.27",
+            "stopAtEntry": false,
+            "type": "cppvsdbg",
+            "visualizerFile": "D:\\UE_4.27\\Engine\\Extras\\VisualStudioDebugging\\UE4.natvis",
+            "console": "externalTerminal"
+        },
+        {
+            "name": "Eliminator (Test)",
+            "request": "launch",
+            "preLaunchTask": "Eliminator Win64 Test Build",
+            "program": "D:\\Games Repos\\Eliminator\\Binaries\\Win64\\UE4-Win64-Test.exe",
+            "args": [],
+            "cwd": "D:\\UE_4.27",
+            "stopAtEntry": false,
+            "type": "cppvsdbg",
+            "visualizerFile": "D:\\UE_4.27\\Engine\\Extras\\VisualStudioDebugging\\UE4.natvis",
+            "console": "externalTerminal"
+        },
+        {
+            "name": "EliminatorEditor (Debug)",
+            "request": "launch",
+            "preLaunchTask": "EliminatorEditor Win64 Debug Build",
+            "program": "D:\\UE_4.27\\Engine\\Binaries\\Win64\\UE4Editor-Win64-Debug.exe",
+            "args": [
+                "D:\\Games Repos\\Eliminator\\Eliminator.uproject"
+            ],
+            "cwd": "D:\\UE_4.27",
+            "stopAtEntry": false,
+            "type": "cppvsdbg",
+            "visualizerFile": "D:\\UE_4.27\\Engine\\Extras\\VisualStudioDebugging\\UE4.natvis",
+            "console": "externalTerminal"
+        },
+        {
+            "name": "EliminatorEditor (DebugGame)",
+            "request": "launch",
+            "preLaunchTask": "EliminatorEditor Win64 DebugGame Build",
+            "program": "D:\\UE_4.27\\Engine\\Binaries\\Win64\\UE4Editor-Win64-DebugGame.exe",
+            "args": [
+                "D:\\Games Repos\\Eliminator\\Eliminator.uproject"
+            ],
+            "cwd": "D:\\UE_4.27",
+            "stopAtEntry": false,
+            "type": "cppvsdbg",
+            "visualizerFile": "D:\\UE_4.27\\Engine\\Extras\\VisualStudioDebugging\\UE4.natvis",
+            "console": "externalTerminal"
+        },
+        {
+            "name": "EliminatorEditor (Development)",
+            "request": "launch",
+            "preLaunchTask": "EliminatorEditor Win64 Development Build",
+            "program": "D:\\UE_4.27\\Engine\\Binaries\\Win64\\UE4Editor.exe",
+            "args": [
+                "D:\\Games Repos\\Eliminator\\Eliminator.uproject"
+            ],
+            "cwd": "D:\\UE_4.27",
+            "stopAtEntry": false,
+            "type": "cppvsdbg",
+            "visualizerFile": "D:\\UE_4.27\\Engine\\Extras\\VisualStudioDebugging\\UE4.natvis",
+            "console": "externalTerminal"
+        },
+        {
+            "name": "Generate Project Files",
+            "type": "clr",
+            "request": "launch",
+            "program": "D:\\UE_4.27\\Engine\\Binaries\\DotNET\\UnrealBuildTool.exe",
+            "console": "externalTerminal",
+            "args": [
+                "-projectfiles",
+                "-vscode",
+                "-project=D:\\Games Repos\\Eliminator\\Eliminator.uproject",
+                "-game",
+                "-engine"
+            ],
+            "internalConsoleOptions": "openOnSessionStart",
+            "cwd": "D:\\UE_4.27"
+        }
+    ]
+}
