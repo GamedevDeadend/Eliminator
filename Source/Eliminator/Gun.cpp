@@ -36,5 +36,6 @@ void AGun :: Shoot()
 {
 		FVector Location = BulletSpawnPoint->GetComponentLocation();
 		FRotator Rotation = BulletSpawnPoint->GetComponentRotation();
-		GetWorld()->SpawnActor<ABullet>(FiredBulletClass, Location, Rotation);
+		AActor *FiredBullet = GetWorld()->SpawnActor<ABullet>(FiredBulletClass, Location, Rotation);
+		FiredBullet->SetOwner(GetOwner());
 }

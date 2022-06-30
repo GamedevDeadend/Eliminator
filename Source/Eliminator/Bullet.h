@@ -20,6 +20,8 @@ class ELIMINATOR_API ABullet : public AActor
 		UPROPERTY(EditAnywhere, BlueprintReadWrite, meta =(AllowPrivateAccess = true), Category = "Projectile Defaults" )
 		class UProjectileMovementComponent* BulletMovement;
 
+		float Damage = 30.0f;
+
 
 
 	
