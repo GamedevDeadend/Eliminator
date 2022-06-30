@@ -3,6 +3,7 @@
 
 #include "PlayerBase.h"
 #include "Gun.h"
+#include "DrawDebugHelpers.h"
 
 // Sets default values
 APlayerBase::APlayerBase()
@@ -19,12 +20,22 @@ void APlayerBase::BeginPlay()
 	Gun = GetWorld()->SpawnActor<AGun>(BlasterClass);
 	Gun->AttachToComponent(GetMesh(), FAttachmentTransformRules :: KeepRelativeTransform, TEXT("WepaonSocket"));
 	Gun->SetOwner(this);
+	PlayerControllerRef = Cast<APlayerController>(GetController());
+
+
 }
 
 // Called every frame
 void APlayerBase::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+
+	// if(PlayerControllerRef)
+	// {
+	// 	FHitResult HitResult;
+	// 	PlayerControllerRef->GetHitResultUnderCursor(ECollisionChannel :: ECC_Visibility, false, HitResult);
+	// 	DrawDebugSphere(GetWorld(), Gun->BulletSpawnPoint->GetComponentLocation(), 50.0f, 20, FColor :: Red, true, 9.0f );
+	// }
 
 }
 
@@ -53,6 +64,12 @@ void APlayerBase :: MoveRight(float AxisValue)
 
 void APlayerBase :: Fire()
 {
+	if(PlayerControllerRef)
+	{
+		FHitResult HitResult;
+		PlayerControllerRef->GetHitResultUnderCursor(ECollisionChannel :: ECC_Visibility, false, HitResult);
+		DrawDebugSphere(GetWorld(), Gun->BulletSpawnPoint->GetComponentLocation(), 5.0f, 20, FColor :: Red, true, 9.0f );
+	}
 	Gun->Shoot();
 }
 

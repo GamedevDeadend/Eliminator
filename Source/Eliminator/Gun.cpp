@@ -2,6 +2,7 @@
 
 #include "Gun.h"
 #include "Components/StaticMeshComponent.h"
+#include"particles/ParticleSystem.h"
 #include "Bullet.h"
 
 // Sets default values

@@ -12,15 +12,13 @@ class ELIMINATOR_API ABullet : public AActor
 	GENERATED_BODY()
 
 	private:
-
-		UPROPERTY(EditAnywhere, BlueprintReadWrite, meta =(AllowPrivateAccess = true), Category = "Projectile Defaults" )
+		UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, meta =(AllowPrivateAccess = true), Category = "Projectile Defaults" )
 		class UStaticMeshComponent* BulletMesh;
 
 		UPROPERTY(VisibleAnywhere, BlueprintReadWrite, meta =(AllowPrivateAccess = true), Category = "Projectile Defaults" )
 		class UProjectileMovementComponent* BulletMovement;
 
-		UPROPERTY(EditAnywhere, BlueprintReadWrite, meta =(AllowPrivateAccess = true), Category = "Projectile Defaults" )
-		float BulletVelocity;
+
 	
 public:	
 	// Sets default values for this actor's properties

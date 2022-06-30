@@ -20,14 +20,14 @@ private:
 	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Weapon Defaults" ,meta = (AllowPrivateAccess = true));
 		UStaticMeshComponent* Mesh;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Weapon Defaults" ,meta = (AllowPrivateAccess = true));
-		USceneComponent* BulletSpawnPoint;
 	
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Weapon Defaults", meta = (AllowPrivateAccess = true));
 	TSubclassOf<class ABullet> FiredBulletClass;
 public:	
 	// Sets default values for this actor's properties
 	AGun();
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Weapon Defaults");
+		USceneComponent* BulletSpawnPoint;
 
 protected:
 	// Called when the game starts or when spawned
