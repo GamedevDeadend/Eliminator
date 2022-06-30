@@ -68,7 +68,7 @@ void APlayerBase :: Fire()
 	{
 		FHitResult HitResult;
 		PlayerControllerRef->GetHitResultUnderCursor(ECollisionChannel :: ECC_Visibility, false, HitResult);
-		DrawDebugSphere(GetWorld(), Gun->BulletSpawnPoint->GetComponentLocation(), 5.0f, 20, FColor :: Red, true, 9.0f );
+		DrawDebugSphere(GetWorld(), Gun->BulletSpawnPoint->GetForwardVector(), 5.0f, 20, FColor :: Red, true, 9.0f );
 	}
 	Gun->Shoot();
 }
