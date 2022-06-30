@@ -12,6 +12,8 @@ class ELIMINATOR_API ABullet : public AActor
 	GENERATED_BODY()
 
 	private:
+
+
 		UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, meta =(AllowPrivateAccess = true), Category = "Projectile Defaults" )
 		class UStaticMeshComponent* BulletMesh;
 
@@ -31,5 +33,8 @@ protected:
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
+
+		UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Projectile Defaults")
+		float DistanceTravelled = 2000.0f;
 
 };

@@ -26,8 +26,6 @@ private:
 public:	
 	// Sets default values for this actor's properties
 	AGun();
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Weapon Defaults");
-		USceneComponent* BulletSpawnPoint;
 
 protected:
 	// Called when the game starts or when spawned
@@ -38,4 +36,6 @@ public:
 	virtual void Tick(float DeltaTime) override;
 	void Shoot();
 
+	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Weapon Defaults");
+		USceneComponent* BulletSpawnPoint;
 };

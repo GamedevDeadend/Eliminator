@@ -16,16 +16,14 @@ ABullet::ABullet()
 	SetRootComponent(BulletMesh);
 
 	BulletMovement = CreateDefaultSubobject<UProjectileMovementComponent>(TEXT("Bullet Movement"));
-	BulletMovement->InitialSpeed = 1000.0f;
-	BulletMovement->MaxSpeed = 1000.0f;
-
+	BulletMovement->MaxSpeed = DistanceTravelled;
+	BulletMovement->InitialSpeed = DistanceTravelled;
 }
 
 // Called when the game starts or when spawned
 void ABullet::BeginPlay()
 {
-	// FVector FireForce = FVector (FireForwardForce,0,0);
-	// BulletMesh->AddForce(FireForce);
+	Super :: BeginPlay();
 }
 
 // Called every frame
