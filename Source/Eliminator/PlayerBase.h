@@ -20,7 +20,6 @@ private:
 	UPROPERTY()
 	class AGun* Gun;
 
-	// UPROPERTY (EditDefaultsOnly, BlueprintReadOnly, Category = "Player Defaults",  meta = (Allow private access = true))
 	class APlayerController* PlayerControllerRef;
 
 	void MoveForward(float axis);

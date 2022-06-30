@@ -17,10 +17,12 @@ APlayerBase::APlayerBase()
 void APlayerBase::BeginPlay()
 {
 	Super::BeginPlay();
-	Gun = GetWorld()->SpawnActor<AGun>(BlasterClass);
-	Gun->AttachToComponent(GetMesh(), FAttachmentTransformRules :: KeepRelativeTransform, TEXT("WepaonSocket"));
-	Gun->SetOwner(this);
-	PlayerControllerRef = Cast<APlayerController>(GetController());
+
+		Gun = GetWorld()->SpawnActor<AGun>(BlasterClass);
+		Gun->AttachToComponent(GetMesh(), FAttachmentTransformRules :: KeepRelativeTransform, TEXT("WepaonSocket"));
+		Gun->SetOwner(this);
+	
+		PlayerControllerRef = Cast<APlayerController>(GetController());
 
 
 }
@@ -29,14 +31,6 @@ void APlayerBase::BeginPlay()
 void APlayerBase::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
-	// if(PlayerControllerRef)
-	// {
-	// 	FHitResult HitResult;
-	// 	PlayerControllerRef->GetHitResultUnderCursor(ECollisionChannel :: ECC_Visibility, false, HitResult);
-	// 	DrawDebugSphere(GetWorld(), Gun->BulletSpawnPoint->GetComponentLocation(), 50.0f, 20, FColor :: Red, true, 9.0f );
-	// }
-
 }
 
 // Called to bind functionality to input
@@ -64,13 +58,14 @@ void APlayerBase :: MoveRight(float AxisValue)
 
 void APlayerBase :: Fire()
 {
-	if(PlayerControllerRef)
+	if(PlayerControllerRef != nullptr)
 	{
 		FHitResult HitResult;
 		PlayerControllerRef->GetHitResultUnderCursor(ECollisionChannel :: ECC_Visibility, false, HitResult);
-		DrawDebugSphere(GetWorld(), Gun->BulletSpawnPoint->GetForwardVector(), 5.0f, 20, FColor :: Red, true, 9.0f );
+		UE_LOG(LogTemp, Warning, TEXT("PASS"));
+		Gun->Shoot();
 	}
-	Gun->Shoot();
+		UE_LOG(LogTemp, Warning, TEXT("Fail"));
 }
 
 

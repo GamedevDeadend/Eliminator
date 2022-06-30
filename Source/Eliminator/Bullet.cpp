@@ -24,6 +24,7 @@ ABullet::ABullet()
 void ABullet::BeginPlay()
 {
 	Super :: BeginPlay();
+	BulletMesh->OnComponentHit.AddDynamic(this, &ABullet::OnHit);
 }
 
 // Called every frame
@@ -31,5 +32,11 @@ void ABullet::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+
+}
+
+void ABullet :: OnHit(UPrimitiveComponent* HittingComp, AActor* OtherActor,UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& HitResult)
+{
+	UE_LOG(LogTemp, Warning, TEXT("On Hit!! %s"), *OtherActor->GetName());
 }
 

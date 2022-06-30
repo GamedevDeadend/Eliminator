@@ -14,11 +14,11 @@ class ELIMINATOR_API AGun : public AActor
 private:
 
 	
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Weapon Defaults", meta = (AllowPrivateAccess = true));
-		USceneComponent* WeaponRoot;
+	// UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Weapon Defaults", meta = (AllowPrivateAccess = true));
+	// 	USceneComponent* WeaponRoot;
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadWrite, Category = "Weapon Defaults" ,meta = (AllowPrivateAccess = true));
-		UStaticMeshComponent* Mesh;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Weapon Defaults" ,meta = (AllowPrivateAccess = true));
+		class USkeletalMeshComponent* Mesh;
 
 	
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Weapon Defaults", meta = (AllowPrivateAccess = true));

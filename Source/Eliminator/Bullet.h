@@ -17,14 +17,18 @@ class ELIMINATOR_API ABullet : public AActor
 		UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, meta =(AllowPrivateAccess = true), Category = "Projectile Defaults" )
 		class UStaticMeshComponent* BulletMesh;
 
-		UPROPERTY(VisibleAnywhere, BlueprintReadWrite, meta =(AllowPrivateAccess = true), Category = "Projectile Defaults" )
+		UPROPERTY(EditAnywhere, BlueprintReadWrite, meta =(AllowPrivateAccess = true), Category = "Projectile Defaults" )
 		class UProjectileMovementComponent* BulletMovement;
+
 
 
 	
 public:	
 	// Sets default values for this actor's properties
 	ABullet();
+
+	UFUNCTION()
+	void OnHit(UPrimitiveComponent* HittingComp, AActor* OtherActor,UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& HitResult);
 
 protected:
 	// Called when the game starts or when spawned
@@ -35,6 +39,6 @@ public:
 	virtual void Tick(float DeltaTime) override;
 
 		UPROPERTY(EditAnywhere)
-		float DistanceTravelled = 2000.0f;
+		float DistanceTravelled = 5000.0f;
 
 };
