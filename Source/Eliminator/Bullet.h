@@ -34,7 +34,7 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-		UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Projectile Defaults")
+		UPROPERTY(EditAnywhere)
 		float DistanceTravelled = 2000.0f;
 
 };
