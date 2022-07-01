@@ -1,4 +1,3 @@
-// Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
 
@@ -11,36 +10,35 @@ class ELIMINATOR_API ABullet : public AActor
 {
 	GENERATED_BODY()
 
-	private:
+private:
 
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, meta =(AllowPrivateAccess = true), Category = "Projectile Defaults" )
+	class UStaticMeshComponent* BulletMesh;
 
-		UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, meta =(AllowPrivateAccess = true), Category = "Projectile Defaults" )
-		class UStaticMeshComponent* BulletMesh;
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta =(AllowPrivateAccess = true), Category = "Projectile Defaults" )
+	class UProjectileMovementComponent* BulletMovement;
 
-		UPROPERTY(EditAnywhere, BlueprintReadWrite, meta =(AllowPrivateAccess = true), Category = "Projectile Defaults" )
-		class UProjectileMovementComponent* BulletMovement;
+	UPROPERTY(EditAnywhere)
+	float Damage = 100.0f;
 
-		float Damage = 30.0f;
-
-
-
-	
 public:	
-	// Sets default values for this actor's properties
-	ABullet();
 
+	ABullet();
 	UFUNCTION()
-	void OnHit(UPrimitiveComponent* HittingComp, AActor* OtherActor,UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& HitResult);
+	void OnHit
+	(	
+		UPrimitiveComponent* HittingComp, AActor* OtherActor,
+		UPrimitiveComponent* OtherComp, FVector NormalImpulse,
+		 const FHitResult& HitResult
+	);
 
 protected:
-	// Called when the game starts or when spawned
+
 	virtual void BeginPlay() override;
 
 public:	
-	// Called every frame
+
 	virtual void Tick(float DeltaTime) override;
-
-		UPROPERTY(EditAnywhere)
-		float DistanceTravelled = 5000.0f;
-
+	UPROPERTY(EditAnywhere)
+	float DistanceTravelled = 5000.0f;
 };

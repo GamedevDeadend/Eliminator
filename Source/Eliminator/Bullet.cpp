@@ -1,5 +1,3 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
 
 #include "Bullet.h"
 #include "GameFramework/ProjectileMovementComponent.h"
@@ -8,10 +6,8 @@
 #include "Components/PrimitiveComponent.h"
 #include "GameFramework/DamageType.h"
 
-// Sets default values
 ABullet::ABullet()
 {
- 	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = false;
 
 	BulletMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Bullet Mesh"));
@@ -22,33 +18,33 @@ ABullet::ABullet()
 	BulletMovement->InitialSpeed = DistanceTravelled;
 }
 
-// Called when the game starts or when spawned
+
 void ABullet::BeginPlay()
 {
 	Super :: BeginPlay();
 	BulletMesh->OnComponentHit.AddDynamic(this, &ABullet::OnHit);
 }
 
-// Called every frame
 void ABullet::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-
-
 }
 
 void ABullet :: OnHit(UPrimitiveComponent* HittingComp, AActor* OtherActor,UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& HitResult)
 {
-	// UE_LOG(LogTemp, Warning, TEXT("On Hit!! %s"), *OtherActor->GetName());
 	auto MyOwner = GetOwner();
 	if(MyOwner == nullptr) return;
 
 	auto MyOwnerInstigator = MyOwner->GetInstigatorController();
-	auto DamageType = UDamageType::StaticClass();
+	auto DamageTypeClass = UDamageType::StaticClass();
 
 	if(OtherActor && OtherActor != this && OtherActor != MyOwner)
 	{
-		UGameplayStatics :: ApplyDamage(OtherActor, Damage,MyOwnerInstigator, this, DamageType);
+		UGameplayStatics :: ApplyDamage(OtherActor, Damage, MyOwnerInstigator, this, DamageTypeClass);
 	}
+	Destroy();
 }
 
+// *****DEBUGGERS********
+// 	UE_LOG(LogTemp, Warning, TEXT("On Hit!! %s"), *OtherActor->GetName());
+// 	UE_LOG(LogTemp, Warning, TEXT("null ptr test passed"), *OtherActor->GetName());

@@ -1,19 +1,18 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
 
 #include "PlayerBase.h"
 #include "Gun.h"
-#include "DrawDebugHelpers.h"
+#include "Eliminator/HealthComponent.h"
+#include"TimerManager.h"
 
-// Sets default values
+
+
 APlayerBase::APlayerBase()
 {
- 	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
-
+	HealthComponent = CreateDefaultSubobject<UHealthComponent>(TEXT("Health Component"));
+	HealthComponent->MaxHealth = 300.0f;
 }
 
-// Called when the game starts or when spawned
 void APlayerBase::BeginPlay()
 {
 	Super::BeginPlay();
@@ -23,17 +22,14 @@ void APlayerBase::BeginPlay()
 		Gun->SetOwner(this);
 	
 		PlayerControllerRef = Cast<APlayerController>(GetController());
-
-
 }
 
-// Called every frame
 void APlayerBase::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 }
 
-// Called to bind functionality to input
+
 void APlayerBase::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
@@ -42,8 +38,7 @@ void APlayerBase::SetupPlayerInputComponent(UInputComponent* PlayerInputComponen
 	PlayerInputComponent->BindAxis(TEXT("MoveForward"), this, &APlayerBase::MoveForward);
 	PlayerInputComponent->BindAxis(TEXT("MoveRight"), this, &APlayerBase::MoveRight);
 	PlayerInputComponent->BindAction("Jump", EInputEvent::IE_Pressed, this, &ACharacter :: Jump);
-	PlayerInputComponent->BindAction("Fire", EInputEvent::IE_Pressed, this, &APlayerBase :: Fire);
-	//PlayerInputComponent->BindAxis(TEXT("LookUp"), this, &APawn::AddControllerPitchInput);
+	PlayerInputComponent->BindAction("Fire", EInputEvent::IE_Pressed, this, &APlayerBase :: DelayFire);
 }
 
 void APlayerBase :: MoveForward(float AxisValue)
@@ -60,12 +55,18 @@ void APlayerBase :: Fire()
 {
 	if(PlayerControllerRef != nullptr)
 	{
-		FHitResult HitResult;
-		PlayerControllerRef->GetHitResultUnderCursor(ECollisionChannel :: ECC_Visibility, false, HitResult);
-		UE_LOG(LogTemp, Warning, TEXT("PASS"));
 		Gun->Shoot();
 	}
-		UE_LOG(LogTemp, Warning, TEXT("Fail"));
 }
 
+		// FHitResult HitResult;
+		// PlayerControllerRef->GetHitResultUnderCursor(ECollisionChannel :: ECC_Visibility, false, HitResult);
+void APlayerBase :: DelayFire()
+{
+	GetWorldTimerManager().SetTimer(ShootTimer, this, &APlayerBase::Fire, DelayBullet, false);
+}
+
+// ******DEBUGGERS***
+// 		// UE_LOG(LogTemp, Warning, TEXT("Fail"));
+		// UE_LOG(LogTemp, Warning, TEXT("Character Fired"));
 

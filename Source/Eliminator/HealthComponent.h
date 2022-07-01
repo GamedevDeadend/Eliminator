@@ -1,4 +1,3 @@
-// Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
 
@@ -14,26 +13,28 @@ class ELIMINATOR_API UHealthComponent : public UActorComponent
 
 private:
 
-UFUNCTION()
-void DamageTaken(AActor *DamagedActor, float Damage, const UDamageType *DamageType,class AController *Instigator, AActor *DamageCauser);
+	UFUNCTION()
+	 void TakeDamage
+	(	
+		AActor* DamagedActor, float Damage,
+	 	const class UDamageType* DamageType,
+		class AController* InstigatedBy,AActor* DamageCauser
+ 	);
 
-UPROPERTY(EditAnywhere)
-float MaxHealth = 100.0f;
-
-float Health  = 0.0f;
-
+	UPROPERTY(BlueprintReadOnly, meta = (AllowPrivateAccess = true))
+	float Health  = 0.0f;
 
 public:	
-	// Sets default values for this component's properties
+
 	UHealthComponent();
 
 protected:
-	// Called when the game starts
+
 	virtual void BeginPlay() override;
 
 public:	
-	// Called every frame
-	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
-		
+	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
+	UPROPERTY(EditAnywhere)
+	float MaxHealth = 300.0f;
 };
