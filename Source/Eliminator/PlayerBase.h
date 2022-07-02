@@ -19,21 +19,25 @@ private:
 	UPROPERTY(EditAnywhere)
 	class UHealthComponent *HealthComponent;
 
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Combat Settings", meta = (AllowPrivateAccess = true))
+	float ShootingDelay = 0.1f;
+
 	UPROPERTY()
 	class AGun* Gun;
+
 	class APlayerController* PlayerControllerRef;
+
 	FTimerHandle ShootTimer;
 
 	void MoveForward(float axis);
-	void Fire();
-	void DelayFire();
 	void MoveRight(float axis);
 
 public:
 
 	APlayerBase();
-	UPROPERTY(EditAnywhere)
-	float DelayBullet = 0.1f;
+
+	UFUNCTION(BlueprintCallable)
+	bool IsDead() const;
 
 protected:
 
@@ -43,4 +47,6 @@ public:
 
 	virtual void Tick(float DeltaTime) override;
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+	void DelayFire();
+	void Fire();
 };

@@ -10,7 +10,7 @@ APlayerBase::APlayerBase()
 {
 	PrimaryActorTick.bCanEverTick = true;
 	HealthComponent = CreateDefaultSubobject<UHealthComponent>(TEXT("Health Component"));
-	HealthComponent->MaxHealth = 300.0f;
+	HealthComponent->Health = 300.0f;
 }
 
 void APlayerBase::BeginPlay()
@@ -59,14 +59,32 @@ void APlayerBase :: Fire()
 	}
 }
 
-		// FHitResult HitResult;
-		// PlayerControllerRef->GetHitResultUnderCursor(ECollisionChannel :: ECC_Visibility, false, HitResult);
 void APlayerBase :: DelayFire()
 {
-	GetWorldTimerManager().SetTimer(ShootTimer, this, &APlayerBase::Fire, DelayBullet, false);
+	GetWorldTimerManager().SetTimer(ShootTimer, this, &APlayerBase::Fire, ShootingDelay, false);
+}
+
+bool APlayerBase :: IsDead() const
+{
+	bool bIsDead  = false;
+
+	HealthComponent->Health == 0 ? bIsDead = true : bIsDead = false;
+	// if(HealthComponent->Health <= 0)
+	// {
+	// 	bIsDead = true;
+	// }
+	// else
+	// {
+	// 	bIsDead = false;
+	// }
+
+	return bIsDead;
 }
 
 // ******DEBUGGERS***
-// 		// UE_LOG(LogTemp, Warning, TEXT("Fail"));
+ 		// UE_LOG(LogTemp, Warning, TEXT("Fail"));
 		// UE_LOG(LogTemp, Warning, TEXT("Character Fired"));
+		// FHitResult HitResult;
+		// PlayerControllerRef->GetHitResultUnderCursor(ECollisionChannel :: ECC_Visibility, false, HitResult);
+	// UE_LOG(LogTemp, Warning, TEXT("Health : %f"), HealthComponent->Health);
 

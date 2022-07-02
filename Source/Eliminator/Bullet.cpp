@@ -41,10 +41,9 @@ void ABullet :: OnHit(UPrimitiveComponent* HittingComp, AActor* OtherActor,UPrim
 	if(OtherActor && OtherActor != this && OtherActor != MyOwner)
 	{
 		UGameplayStatics :: ApplyDamage(OtherActor, Damage, MyOwnerInstigator, this, DamageTypeClass);
+		Destroy();
 	}
-	Destroy();
 }
-
 // *****DEBUGGERS********
 // 	UE_LOG(LogTemp, Warning, TEXT("On Hit!! %s"), *OtherActor->GetName());
 // 	UE_LOG(LogTemp, Warning, TEXT("null ptr test passed"), *OtherActor->GetName());

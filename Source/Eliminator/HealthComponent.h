@@ -21,8 +21,6 @@ private:
 		class AController* InstigatedBy,AActor* DamageCauser
  	);
 
-	UPROPERTY(BlueprintReadOnly, meta = (AllowPrivateAccess = true))
-	float Health  = 0.0f;
 
 public:	
 
@@ -35,6 +33,9 @@ protected:
 public:	
 
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
-	UPROPERTY(EditAnywhere)
-	float MaxHealth = 300.0f;
+
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Health Details")
+	float Health = 300.0f;
+
 };

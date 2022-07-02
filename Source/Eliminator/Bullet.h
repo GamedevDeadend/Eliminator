@@ -40,5 +40,5 @@ public:
 
 	virtual void Tick(float DeltaTime) override;
 	UPROPERTY(EditAnywhere)
-	float DistanceTravelled = 5000.0f;
+	float DistanceTravelled = 2000.0f;
 };
