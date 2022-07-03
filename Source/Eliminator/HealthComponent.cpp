@@ -12,7 +12,7 @@ void UHealthComponent::BeginPlay()
 {
 	Super::BeginPlay();
 	
-	Health = 300.0f;
+	// Health = 300.0f;
 	// UE_LOG(LogTemp, Warning, TEXT("Health at Begin Play : %f"), Health);
 	AActor *Owner = GetOwner();
 	if(Owner)
@@ -48,11 +48,11 @@ void UHealthComponent :: TakeDamage
 	}
 
 	Health -= Damage;
+	UE_LOG(LogTemp, Warning, TEXT("Health at TakeDamage : %f"), Health);
 }
 
 
 // *******DEBUGGERS*********
 // 	UE_LOG(LogTemp, Warning, TEXT("Health Reduced"));]
 	// UE_LOG(LogTemp, Warning, TEXT("%s Player Is Dead %f"), *GetOwner()->GetName(), Health);
-	// UE_LOG(LogTemp, Warning, TEXT("Health at TakeDamage : %f"), Health);
 

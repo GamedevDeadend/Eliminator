@@ -57,12 +57,17 @@ void APlayerBase::PlayerDead()
 	if(HealthComponent == nullptr){return;}
 	if (HealthComponent->Health <= 0)
 		{
-			if( GetName() != TEXT("BP_MyPlayer_C_0") )
+			if( GetName() != TEXT("BP_MainPlayer_C_0") )
 			{
 				DetachFromControllerPendingDestroy();
 				if(Gun == nullptr)return;
 				Gun->Destroy();
-				return;
+			}
+
+			else
+			{
+				if(Gun == nullptr)return;
+				Gun->Destroy();	
 			}
 		}
 }
