@@ -30,4 +30,5 @@ class ELIMINATOR_API AEnemyAI : public AAIController
 
 		UPROPERTY(EditDefaultsOnly, BlueprintReadWrite)
 		class UBehaviorTree *AIBehavior;
+		bool IsAIDead() const;
 };

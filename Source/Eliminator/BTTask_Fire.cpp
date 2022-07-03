@@ -15,11 +15,11 @@ EBTNodeResult::Type UBTTask_Fire::ExecuteTask(UBehaviorTreeComponent& OwnerComp,
 {
     if(OwnerComp.GetAIOwner() == nullptr){  return EBTNodeResult::Failed;   }
 
-        APlayerBase *Player = Cast<APlayerBase>(OwnerComp.GetAIOwner()->GetPawn());
+    APlayerBase *Player = Cast<APlayerBase>(OwnerComp.GetAIOwner()->GetPawn());
     if(Player == nullptr)
-    {return  return EBTNodeResult::Failed;}
+    {return EBTNodeResult::Failed;}
 
-    Player->Fire();
+    Player->DelayFire();
 
 
     return EBTNodeResult::Succeeded;

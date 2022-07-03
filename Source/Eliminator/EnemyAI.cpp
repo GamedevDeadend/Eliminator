@@ -1,6 +1,7 @@
 
 #include "EnemyAI.h"
 #include "Kismet/GamePlayStatics.h"
+#include "PlayerBase.h"
 #include "BehaviorTree/BlackboardComponent.h"
 
 
@@ -34,6 +35,16 @@ void AEnemyAI::Tick(float DeltaTime)
     }
 }
 
+bool AEnemyAI::IsAIDead() const
+{
+    APlayerBase *ControlledAI = Cast<APlayerBase>(GetPawn());
+    if(ControlledAI != nullptr)
+    {
+        return ControlledAI->IsDead();
+    }
+
+    return true;
+}
 // void AEnemyAI::BeginPlay()
 // {
 //     Super::BeginPlay();
@@ -42,5 +53,6 @@ void AEnemyAI::Tick(float DeltaTime)
 //         RunBehaviorTree(AIBehavior);
 //     }
 // }
+
         // APawn *PlayerPawn = UGameplayStatics::GetPlayerPawn(GetWorld(), 0);
         // GetBlackboardComponent()->SetValueAsVector(TEXT("Start Coordinates"), GetPawn()->GetActorLocation());

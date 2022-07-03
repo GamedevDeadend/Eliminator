@@ -63,5 +63,45 @@
         "file": "d:\\\\Games Repos\\\\Eliminator\\\\Source\\\\Eliminator\\\\EnemyAI.h",
         "command": "\"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\cl.exe\" @\"D:\\Games Repos\\Eliminator\\.vscode\\compileCommands_Eliminator\\Eliminator.210.rsp\"",
         "directory": "D:\\UE_4.27\\Engine\\Source"
+    },
+    {
+        "file": "d:\\\\Games Repos\\\\Eliminator\\\\Source\\\\Eliminator\\\\BTTask_ClearValue.cpp",
+        "command": "\"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\cl.exe\" @\"D:\\Games Repos\\Eliminator\\.vscode\\compileCommands_Eliminator\\Eliminator.210.rsp\"",
+        "directory": "D:\\UE_4.27\\Engine\\Source"
+    },
+    {
+        "file": "d:\\\\Games Repos\\\\Eliminator\\\\Source\\\\Eliminator\\\\BTTask_ClearValue.h",
+        "command": "\"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\cl.exe\" @\"D:\\Games Repos\\Eliminator\\.vscode\\compileCommands_Eliminator\\Eliminator.210.rsp\"",
+        "directory": "D:\\UE_4.27\\Engine\\Source"
+    },
+    {
+        "file": "d:\\\\Games Repos\\\\Eliminator\\\\Source\\\\Eliminator\\\\BTTask_Fire.cpp",
+        "command": "\"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\cl.exe\" @\"D:\\Games Repos\\Eliminator\\.vscode\\compileCommands_Eliminator\\Eliminator.210.rsp\"",
+        "directory": "D:\\UE_4.27\\Engine\\Source"
+    },
+    {
+        "file": "d:\\\\Games Repos\\\\Eliminator\\\\Source\\\\Eliminator\\\\BTTask_Fire.h",
+        "command": "\"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\cl.exe\" @\"D:\\Games Repos\\Eliminator\\.vscode\\compileCommands_Eliminator\\Eliminator.210.rsp\"",
+        "directory": "D:\\UE_4.27\\Engine\\Source"
+    },
+    {
+        "file": "d:\\\\Games Repos\\\\Eliminator\\\\Source\\\\Eliminator\\\\GMB_Eliminator.cpp",
+        "command": "\"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\cl.exe\" @\"D:\\Games Repos\\Eliminator\\.vscode\\compileCommands_Eliminator\\Eliminator.210.rsp\"",
+        "directory": "D:\\UE_4.27\\Engine\\Source"
+    },
+    {
+        "file": "d:\\\\Games Repos\\\\Eliminator\\\\Source\\\\Eliminator\\\\GMB_Eliminator.h",
+        "command": "\"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\cl.exe\" @\"D:\\Games Repos\\Eliminator\\.vscode\\compileCommands_Eliminator\\Eliminator.210.rsp\"",
+        "directory": "D:\\UE_4.27\\Engine\\Source"
+    },
+    {
+        "file": "d:\\\\Games Repos\\\\Eliminator\\\\Source\\\\Eliminator\\\\EliminatorPlayerController.cpp",
+        "command": "\"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\cl.exe\" @\"D:\\Games Repos\\Eliminator\\.vscode\\compileCommands_Eliminator\\Eliminator.210.rsp\"",
+        "directory": "D:\\UE_4.27\\Engine\\Source"
+    },
+    {
+        "file": "d:\\\\Games Repos\\\\Eliminator\\\\Source\\\\Eliminator\\\\EliminatorPlayerController.h",
+        "command": "\"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\cl.exe\" @\"D:\\Games Repos\\Eliminator\\.vscode\\compileCommands_Eliminator\\Eliminator.210.rsp\"",
+        "directory": "D:\\UE_4.27\\Engine\\Source"
     }
 ]

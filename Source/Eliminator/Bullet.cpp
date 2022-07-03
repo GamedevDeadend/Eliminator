@@ -45,5 +45,5 @@ void ABullet :: OnHit(UPrimitiveComponent* HittingComp, AActor* OtherActor,UPrim
 	}
 }
 // *****DEBUGGERS********
-// 	UE_LOG(LogTemp, Warning, TEXT("On Hit!! %s"), *OtherActor->GetName());
+	// UE_LOG(LogTemp, Warning, TEXT("On Hit!! %s"), *OtherActor->GetName());
 // 	UE_LOG(LogTemp, Warning, TEXT("null ptr test passed"), *OtherActor->GetName());

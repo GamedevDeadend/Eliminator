@@ -27,6 +27,7 @@ void APlayerBase::BeginPlay()
 void APlayerBase::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+	PlayerDead();
 }
 
 
@@ -51,17 +52,30 @@ void APlayerBase :: MoveRight(float AxisValue)
 	AddMovementInput(GetActorRightVector() * AxisValue);
 }
 
+void APlayerBase::PlayerDead()
+{
+	if(HealthComponent == nullptr){return;}
+	if (HealthComponent->Health <= 0)
+		{
+			if( GetName() != TEXT("BP_MyPlayer_C_0") )
+			{
+				DetachFromControllerPendingDestroy();
+				if(Gun == nullptr)return;
+				Gun->Destroy();
+				return;
+			}
+		}
+}
+
 void APlayerBase :: Fire()
 {
-	if(PlayerControllerRef != nullptr)
-	{
 		Gun->Shoot();
-	}
 }
 
 void APlayerBase :: DelayFire()
 {
 	GetWorldTimerManager().SetTimer(ShootTimer, this, &APlayerBase::Fire, ShootingDelay, false);
+	// UE_LOG(LogTemp, Warning, TEXT("Character Fired %s"), *GetName());
 }
 
 bool APlayerBase :: IsDead() const
@@ -69,22 +83,13 @@ bool APlayerBase :: IsDead() const
 	bool bIsDead  = false;
 
 	HealthComponent->Health == 0 ? bIsDead = true : bIsDead = false;
-	// if(HealthComponent->Health <= 0)
-	// {
-	// 	bIsDead = true;
-	// }
-	// else
-	// {
-	// 	bIsDead = false;
-	// }
 
 	return bIsDead;
 }
 
 // ******DEBUGGERS***
  		// UE_LOG(LogTemp, Warning, TEXT("Fail"));
-		// UE_LOG(LogTemp, Warning, TEXT("Character Fired"));
 		// FHitResult HitResult;
 		// PlayerControllerRef->GetHitResultUnderCursor(ECollisionChannel :: ECC_Visibility, false, HitResult);
 	// UE_LOG(LogTemp, Warning, TEXT("Health : %f"), HealthComponent->Health);
-
+	// UE_LOG(LogTemp, Warning, TEXT("%s Health : %f"), *GetName(), HealthComponent->Health);

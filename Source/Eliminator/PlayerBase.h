@@ -31,6 +31,8 @@ private:
 
 	void MoveForward(float axis);
 	void MoveRight(float axis);
+	void PlayerDead();
+	void Fire();
 
 public:
 
@@ -48,5 +50,4 @@ public:
 	virtual void Tick(float DeltaTime) override;
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 	void DelayFire();
-	void Fire();
 };
