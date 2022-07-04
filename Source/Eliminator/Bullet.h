@@ -12,13 +12,16 @@ class ELIMINATOR_API ABullet : public AActor
 
 private:
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, meta =(AllowPrivateAccess = true), Category = "Projectile Defaults" )
+UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, meta =(AllowPrivateAccess = true), Category = "Projectile Defaults" )
 	class UStaticMeshComponent* BulletMesh;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta =(AllowPrivateAccess = true), Category = "Projectile Defaults" )
+UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (AllowPrivateAccess = true), Category = "Projectile Defaults" )
 	class UProjectileMovementComponent* BulletMovement;
 
-	UPROPERTY(EditAnywhere)
+UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Bullet Settings", meta = (AllowPrivateAccess = true))
+	float DistanceTravelled = 2000.0f;
+
+UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Bullet Settings", meta = (AllowPrivateAccess = true))
 	float Damage = 100.0f;
 
 public:	
@@ -39,6 +42,5 @@ protected:
 public:	
 
 	virtual void Tick(float DeltaTime) override;
-	UPROPERTY(EditAnywhere)
-	float DistanceTravelled = 2000.0f;
+	
 };

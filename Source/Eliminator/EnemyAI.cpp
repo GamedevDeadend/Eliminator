@@ -3,6 +3,7 @@
 #include "Kismet/GamePlayStatics.h"
 #include "PlayerBase.h"
 #include "BehaviorTree/BlackboardComponent.h"
+#include"GMB_Eliminator.h"
 
 
 
@@ -10,12 +11,13 @@ void AEnemyAI::BeginPlay()
 {
     Super ::BeginPlay();
 
-
-    PlayerPawn = UGameplayStatics :: GetPlayerPawn(this, 0);
+    PlayerPawn = UGameplayStatics :: GetPlayerPawn(GetWorld(), 0);
     if( AIBehavior != nullptr)
     {
+        // if(GameMode == nullptr)return;
         RunBehaviorTree( AIBehavior);
-        GetBlackboardComponent()->SetValueAsVector(TEXT("StartLocation"), GetPawn()->GetActorLocation());
+        // GetBlackboardComponent()->SetValueAsVector(TEXT("StartLocation"), GameMode->SpawnLocation);
+        GetBlackboardComponent()->SetValueAsVector(TEXT("StartLocation"), FVector(0.0f, 0.0f, 0.0f));
     }
 }
 
@@ -53,6 +55,6 @@ bool AEnemyAI::IsAIDead() const
 //         RunBehaviorTree(AIBehavior);
 //     }
 // }
-
-        // APawn *PlayerPawn = UGameplayStatics::GetPlayerPawn(GetWorld(), 0);
-        // GetBlackboardComponent()->SetValueAsVector(TEXT("Start Coordinates"), GetPawn()->GetActorLocation());
+// APawn *PlayerPawn = UGameplayStatics::GetPlayerPawn(GetWorld(), 0);
+// GetBlackboardComponent()->SetValueAsVector(TEXT("Start Coordinates"), GetPawn()->GetActorLocation());
+// AGMB_Eliminator *GameMode = GetWorld()->GetAuthGameMode<AGMB_Eliminator>();

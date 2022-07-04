@@ -24,6 +24,7 @@ void APlayerBase::BeginPlay()
 		PlayerControllerRef = Cast<APlayerController>(GetController());
 }
 
+
 void APlayerBase::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
@@ -38,8 +39,8 @@ void APlayerBase::SetupPlayerInputComponent(UInputComponent* PlayerInputComponen
 	PlayerInputComponent->BindAxis(TEXT("LookRight"), this, &APawn::AddControllerYawInput);
 	PlayerInputComponent->BindAxis(TEXT("MoveForward"), this, &APlayerBase::MoveForward);
 	PlayerInputComponent->BindAxis(TEXT("MoveRight"), this, &APlayerBase::MoveRight);
-	PlayerInputComponent->BindAction("Jump", EInputEvent::IE_Pressed, this, &ACharacter :: Jump);
-	PlayerInputComponent->BindAction("Fire", EInputEvent::IE_Pressed, this, &APlayerBase :: DelayFire);
+	PlayerInputComponent->BindAction("Jump", EInputEvent::IE_Pressed, this, &ACharacter::Jump);
+	PlayerInputComponent->BindAction("Fire", EInputEvent::IE_Pressed, this, &APlayerBase::DelayFire);
 }
 
 void APlayerBase :: MoveForward(float AxisValue)
@@ -62,6 +63,8 @@ void APlayerBase::PlayerDead()
 				DetachFromControllerPendingDestroy();
 				if(Gun == nullptr)return;
 				Gun->Destroy();
+				FTimerHandle DestroyTimer;
+				GetWorldTimerManager().SetTimer(DestroyTimer, this, &APlayerBase::DestroyPlayer, 4.0f, false);
 			}
 
 			else
@@ -77,10 +80,10 @@ void APlayerBase :: Fire()
 		Gun->Shoot();
 }
 
+
 void APlayerBase :: DelayFire()
 {
 	GetWorldTimerManager().SetTimer(ShootTimer, this, &APlayerBase::Fire, ShootingDelay, false);
-	// UE_LOG(LogTemp, Warning, TEXT("Character Fired %s"), *GetName());
 }
 
 bool APlayerBase :: IsDead() const
@@ -90,6 +93,11 @@ bool APlayerBase :: IsDead() const
 	HealthComponent->Health == 0 ? bIsDead = true : bIsDead = false;
 
 	return bIsDead;
+}
+
+void APlayerBase::DestroyPlayer()
+{
+	Destroy();
 }
 
 // ******DEBUGGERS***

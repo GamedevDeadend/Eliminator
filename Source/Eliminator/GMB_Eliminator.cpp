@@ -3,9 +3,46 @@
 
 #include "GMB_Eliminator.h"
 #include "EliminatorPlayerController.h"
+#include"PlayerBase.h"
 #include"EngineUtils.h"
 #include"EnemyAI.h"
+#include"Kismet/GameplayStatics.h"
 
+AGMB_Eliminator::AGMB_Eliminator()
+{
+    PrimaryActorTick.bCanEverTick = true;
+}
+
+void AGMB_Eliminator::BeginPlay()
+{
+    Super::BeginPlay();
+}
+
+void AGMB_Eliminator::Tick(float DeltaTime)
+{
+    Super :: Tick(DeltaTime);
+
+    SpawnTimer -= DeltaTime;
+
+    if(SpawnTimer < 0)
+    {
+        SpawnTimer = 5.0f;
+
+        if(GetWorld() != nullptr)
+        {
+
+            if(EnemyBPClass != nullptr)
+            {
+                APawn *OurPlayer = UGameplayStatics::GetPlayerPawn(this, 0);
+                FVector OurLocation = OurPlayer->GetActorLocation();
+                SpawnLocation = OurLocation;
+                SpawnLocation.X = OurLocation.X + FMath :: RandRange(-XRadius, XRadius);
+                SpawnLocation.Y = OurLocation.Y + FMath :: RandRange(-YRadius, YRadius);
+                APlayerBase *SpawnEnemy = GetWorld()->SpawnActor<APlayerBase>(EnemyBPClass, SpawnLocation, FRotator::ZeroRotator);
+            }
+        }
+    }
+}
 
 void AGMB_Eliminator::PawnKilled(APawn *KilledPawn)
 {
@@ -52,3 +89,4 @@ void AGMB_Eliminator::EndGame(bool bIsPlayerWinner)
 //     UE_LOG(LogTemp, Warning, TEXT("SUCESS 0.3"));
 //             UE_LOG(LogTemp, Warning, TEXT("SUCESS 1"));
 //             UE_LOG(LogTemp, Warning, TEXT("SUCESS 2"));
+

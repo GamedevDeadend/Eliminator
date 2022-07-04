@@ -14,8 +14,8 @@ ABullet::ABullet()
 	SetRootComponent(BulletMesh);
 
 	BulletMovement = CreateDefaultSubobject<UProjectileMovementComponent>(TEXT("Bullet Movement"));
-	BulletMovement->MaxSpeed = DistanceTravelled;
-	BulletMovement->InitialSpeed = DistanceTravelled;
+	// BulletMovement->MaxSpeed = DistanceTravelled;
+	// BulletMovement->InitialSpeed = DistanceTravelled;
 }
 
 
@@ -38,7 +38,7 @@ void ABullet :: OnHit(UPrimitiveComponent* HittingComp, AActor* OtherActor,UPrim
 	auto MyOwnerInstigator = MyOwner->GetInstigatorController();
 	auto DamageTypeClass = UDamageType::StaticClass();
 
-	if(OtherActor && OtherActor != this && OtherActor != MyOwner)
+	if(OtherActor && OtherActor != MyOwner)
 	{
 		UGameplayStatics :: ApplyDamage(OtherActor, Damage, MyOwnerInstigator, this, DamageTypeClass);
 		Destroy();

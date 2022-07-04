@@ -33,6 +33,7 @@ private:
 	void MoveRight(float axis);
 	void PlayerDead();
 	void Fire();
+	void SpawnEnemies();
 
 public:
 
@@ -46,7 +47,7 @@ protected:
 	virtual void BeginPlay() override;
 
 public:	
-
+	void DestroyPlayer();
 	virtual void Tick(float DeltaTime) override;
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 	void DelayFire();
