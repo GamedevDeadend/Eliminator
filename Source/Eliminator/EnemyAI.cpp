@@ -3,6 +3,7 @@
 #include "Kismet/GamePlayStatics.h"
 #include "PlayerBase.h"
 #include "BehaviorTree/BlackboardComponent.h"
+#include"Blueprint/UserWidget.h"
 #include"GMB_Eliminator.h"
 
 

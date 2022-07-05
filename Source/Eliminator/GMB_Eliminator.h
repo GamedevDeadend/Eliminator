@@ -13,6 +13,9 @@ UCLASS()
 class ELIMINATOR_API AGMB_Eliminator : public AGameModeBase
 {
 	GENERATED_BODY()
+	private:
+
+		float Temp;
 
 	public:
 
@@ -42,4 +45,7 @@ class ELIMINATOR_API AGMB_Eliminator : public AGameModeBase
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, meta = (AllowPrivateAccess = true), Category  = "Spawn Enemies Attributes")
 	float YRadius;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, meta = (AllowPrivateAccess = true), Category  = "Spawn Enemies Attributes")
+	int EnemiesKilledGM = 0;
 };

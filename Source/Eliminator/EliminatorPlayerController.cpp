@@ -2,6 +2,9 @@
 
 
 #include "EliminatorPlayerController.h"
+#include "Blueprint/UserWidget.h"
+#include "EnemyAI.h"
+#include"EngineUtils.h"
 
 
 void AEliminatorPlayerController::GameHasEnded(class AActor* EndGameFocus, bool bIsWinner)
@@ -18,4 +21,17 @@ void AEliminatorPlayerController::GameHasEnded(class AActor* EndGameFocus, bool 
         UE_LOG(LogTemp, Warning, TEXT("%s Player has Won ;)"), *GetName());
     }
 
+}
+
+
+
+void AEliminatorPlayerController::BeginPlay()
+{
+    Super::BeginPlay();
+
+    UUserWidget *Hud = CreateWidget(this, PlayerHudClass);
+    if(Hud != nullptr)
+    {
+        Hud->AddToViewport();
+    }
 }

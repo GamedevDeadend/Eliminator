@@ -34,7 +34,13 @@ public:
 
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Health Settings", meta = (AllowPrivateAccess = true))
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Health Settings", meta = (AllowPrivateAccess = true))
 	float Health = 300.0f;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Health Settings", meta = (AllowPrivateAccess = true))
+	float MaxHealth = 300.0f;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Health Settings", meta = (AllowPrivateAccess = true))
+	bool bCanIncrease = true;
 
 };

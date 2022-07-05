@@ -22,7 +22,6 @@ class ELIMINATOR_API AEnemyAI : public AAIController
 		APawn *PlayerPawn;
 
 
-
 	protected:
 
 		virtual void BeginPlay() override;
@@ -32,6 +31,8 @@ class ELIMINATOR_API AEnemyAI : public AAIController
 
 		UPROPERTY(EditDefaultsOnly, BlueprintReadWrite)
 		class UBehaviorTree *AIBehavior;
+
+
 		bool IsAIDead() const;
 		FVector EnemyLocation = FVector(0,0,0);
 };

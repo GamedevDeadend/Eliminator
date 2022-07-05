@@ -16,6 +16,8 @@ AGMB_Eliminator::AGMB_Eliminator()
 void AGMB_Eliminator::BeginPlay()
 {
     Super::BeginPlay();
+
+    Temp = SpawnTimer;
 }
 
 void AGMB_Eliminator::Tick(float DeltaTime)
@@ -26,7 +28,7 @@ void AGMB_Eliminator::Tick(float DeltaTime)
 
     if(SpawnTimer < 0)
     {
-        SpawnTimer = 5.0f;
+        SpawnTimer = Temp;
 
         if(GetWorld() != nullptr)
         {

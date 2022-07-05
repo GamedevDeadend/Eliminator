@@ -13,10 +13,15 @@ class ELIMINATOR_API APlayerBase : public ACharacter
 
 private:
 
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (AllowPrivateAccess = true))
+	int BulletFired = 0;
+	
+
 	UPROPERTY(EditDefaultsOnly)
 	TSubclassOf<class AGun> BlasterClass;
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (AllowPrivateAccess = true))
 	class UHealthComponent *HealthComponent;
 
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = "Combat Settings", meta = (AllowPrivateAccess = true))
@@ -42,11 +47,24 @@ public:
 	UFUNCTION(BlueprintCallable)
 	bool IsDead() const;
 
+	UFUNCTION(BlueprintCallable)
+	float Health();
+	UFUNCTION(BlueprintCallable)
+	int BulletUsed();
+
+	UFUNCTION(BlueprintCallable)
+	int TotalEnemiesKilled();
+
 protected:
 
 	virtual void BeginPlay() override;
 
 public:	
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, meta = (AllowPrivateAccess = true))
+	int EnemiesKilled = 0;
+	
+	UFUNCTION(BlueprintCallable)
 	void DestroyPlayer();
 	virtual void Tick(float DeltaTime) override;
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;

@@ -3,7 +3,8 @@
 #include "Gun.h"
 #include "Eliminator/HealthComponent.h"
 #include"TimerManager.h"
-
+#include"GMB_Eliminator.h"
+#include"Kismet/GameplayStatics.h"
 
 
 APlayerBase::APlayerBase()
@@ -65,6 +66,7 @@ void APlayerBase::PlayerDead()
 				Gun->Destroy();
 				FTimerHandle DestroyTimer;
 				GetWorldTimerManager().SetTimer(DestroyTimer, this, &APlayerBase::DestroyPlayer, 4.0f, false);
+
 			}
 
 			else
@@ -77,6 +79,7 @@ void APlayerBase::PlayerDead()
 
 void APlayerBase :: Fire()
 {
+		BulletFired++;
 		Gun->Shoot();
 }
 
@@ -93,6 +96,23 @@ bool APlayerBase :: IsDead() const
 	HealthComponent->Health == 0 ? bIsDead = true : bIsDead = false;
 
 	return bIsDead;
+}
+
+float APlayerBase::Health()
+{
+	return (HealthComponent->Health/HealthComponent->MaxHealth);
+}
+
+int APlayerBase::BulletUsed()
+{
+	return BulletFired;
+}
+
+int APlayerBase::TotalEnemiesKilled()
+{
+	AGMB_Eliminator *GameMode = GetWorld()->GetAuthGameMode<AGMB_Eliminator>();
+	GameMode->EnemiesKilledGM;
+	return GameMode->EnemiesKilledGM;
 }
 
 void APlayerBase::DestroyPlayer()
