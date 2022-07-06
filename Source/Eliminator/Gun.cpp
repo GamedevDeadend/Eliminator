@@ -27,8 +27,14 @@ void AGun ::Tick(float DeltaTime)
 
 void AGun :: Shoot()
 {
-		FVector Location = BulletSpawnPoint->GetComponentLocation();
-		FRotator Rotation = BulletSpawnPoint->GetComponentRotation();
-		AActor *FiredBullet = GetWorld()->SpawnActor<ABullet>(FiredBulletClass, Location, Rotation);
-		FiredBullet->SetOwner(GetOwner());
+	if(BulletSpawnPoint != nullptr)
+		{
+			FVector Location = BulletSpawnPoint->GetComponentLocation();
+			FRotator Rotation = BulletSpawnPoint->GetComponentRotation();
+			if(GetWorld() != nullptr)
+			{
+				AActor *FiredBullet = GetWorld()->SpawnActor<ABullet>(FiredBulletClass, Location, Rotation);
+				if(FiredBullet != nullptr){FiredBullet->SetOwner(GetOwner());}
+			}
+		}
 }
